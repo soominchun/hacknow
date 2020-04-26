@@ -1,19 +1,19 @@
 import { MongoClient } from "mongodb";
 import nextConnect from "next-connect";
 
+
 const client = new MongoClient(
-  "{mongodb+srv://admin:forhacknow@cluster0-vrlxq.mongodb.net/test?retryWrites=true&w=majority}",
+  "mongodb+srv://admin:forhacknow@cluster0-vrlxq.mongodb.net/test?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
 );
-console.log(client);
+
 async function database(req, res, next) {
   if (!client.isConnected()) await client.connect();
   req.dbClient = client;
   req.db = client.db("hacknow");
-  console.log("hMMmmmmmmmmmm")
   return next();
 }
 

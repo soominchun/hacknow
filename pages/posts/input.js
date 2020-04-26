@@ -1,6 +1,11 @@
+import React, { useState } from 'react';
 import Link from "next/link";
 import Head from "next/head";
 import Layout from "../../components/layout";
+
+const [schedule, setSchedule] = useState([0,0,0,0,0,0]);
+const [subject, setSubject] = useState("");
+
 function DayInput(props) {
   return (
     <div className="day">
@@ -8,10 +13,10 @@ function DayInput(props) {
         <p>{props.dayName}</p>
       </div>
       <select>
-        <option value="0:30">0:30 </option>
-        <option value="1:00">1:00 </option>
-        <option value="1:30">1:30 </option>
-        <option value="2:00">2:00 </option>
+        <option value="0.5">0:30 </option>
+        <option value="1">1:00 </option>
+        <option value="1.5">1:30 </option>
+        <option value="2">2:00 </option>
       </select>
     </div>
   );
