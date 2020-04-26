@@ -4,46 +4,50 @@ import Layout from "../../components/layout";
 function DayInput(props) {
   return (
     <div className="day">
-        <div className = "dayName"> 
-            <p>{props.dayName}</p>
-        </div>
-        <select>
-            <option value="0:30">0:30 </option>
-            <option value="1:00">1:00 </option>
-            <option value="1:30">1:30 </option>
-            <option value="2:00">2:00 </option>
-        </select>
+      <div className="dayName">
+        <p>{props.dayName}</p>
+      </div>
+      <select>
+        <option value="0:30">0:30 </option>
+        <option value="1:00">1:00 </option>
+        <option value="1:30">1:30 </option>
+        <option value="2:00">2:00 </option>
+      </select>
     </div>
   );
 }
-
 
 export default function Input() {
   return (
     <Layout>
       <Head>
-        <title> Enter how much time each day? </title>
+        <title> Sign Up </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>First Post</h1>
-      <div className = "week">
-        <DayInput dayName = "Monday"/>
-        <DayInput dayName = "Tuesday"/>
-        <DayInput dayName = "Wednesday"/>
-        <DayInput dayName = "Thursday"/>
-        <DayInput dayName = "Friday"/>
+      <h1>Enter how much time each day?</h1>
+      <div className="week">
+        <DayInput dayName="Monday" />
+        <DayInput dayName="Tuesday" />
+        <DayInput dayName="Wednesday" />
+        <DayInput dayName="Thursday" />
+        <DayInput dayName="Friday" />
       </div>
+      <h1>What subject would you like to study? </h1>
+      <a href="/posts/display" className="next">
+        <h3> Next &rarr;</h3>
+      </a>
+
+      <style jsx>{`
+        .week {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .next {
+            display:flex;
+            align-items: flex-end;
+        }
+      `}</style>
     </Layout>
   );
 }
-
-<style jsx>{`
-        .week {
-            display: flex;
-            background-color: DodgerBlue;
-            align-items: center;
-        }
-        .day {
-            width: 100px;
-        }
-      `}</style>
